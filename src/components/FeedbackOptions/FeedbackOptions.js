@@ -2,8 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types'
 import style from './FeedbackOptions.module.css'
 
-const FeedbackOptions = ({ options, onLeaveFeedback }) => {
-    const { good, neutral, bad } = options;
+const FeedbackOptions = ({ onLeaveFeedback }) => {
     return (
         <div className={style.btnList}>
             <button
@@ -11,7 +10,6 @@ const FeedbackOptions = ({ options, onLeaveFeedback }) => {
                 type="button"
                 onClick={onLeaveFeedback}
                 name="good"
-                data-value={good}
             >
                 Good
             </button>
@@ -21,7 +19,6 @@ const FeedbackOptions = ({ options, onLeaveFeedback }) => {
                 type="button"
                 onClick={onLeaveFeedback}
                 name="neutral"
-                data-value={neutral}
             >
                 Neutral
             </button>
@@ -31,7 +28,6 @@ const FeedbackOptions = ({ options, onLeaveFeedback }) => {
                 type="button"
                 onClick={onLeaveFeedback}
                 name="bad"
-                data-value={bad}
             >
                 Bad
             </button>
@@ -41,11 +37,6 @@ const FeedbackOptions = ({ options, onLeaveFeedback }) => {
 };
 
 FeedbackOptions.propTypes = {
-    options: PropTypes.shape({
-        good: PropTypes.number.isRequired,
-        neutral: PropTypes.number.isRequired,
-        bad: PropTypes.number.isRequired,
-    }).isRequired,
     onLeaveFeedback: PropTypes.func.isRequired,
 };
 
